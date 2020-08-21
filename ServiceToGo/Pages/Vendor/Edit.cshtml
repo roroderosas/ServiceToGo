@@ -1,0 +1,45 @@
+﻿@page
+@model ServiceToGo.Pages.Vendor.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vendors</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Vendors.ID" />
+            <div class="form-group">
+                <label asp-for="Vendors.CompanyName" class="control-label"></label>
+                <input asp-for="Vendors.CompanyName" class="form-control" />
+                <span asp-validation-for="Vendors.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendors.Email" class="control-label"></label>
+                <input asp-for="Vendors.Email" class="form-control" />
+                <span asp-validation-for="Vendors.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendors.Phone" class="control-label"></label>
+                <input asp-for="Vendors.Phone" class="form-control" />
+                <span asp-validation-for="Vendors.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
